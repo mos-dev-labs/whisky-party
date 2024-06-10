@@ -1,6 +1,6 @@
 import {MainCards} from "@/features/cards";
 import {useState} from "react";
-import {MainPopup} from "../../../features/popup";
+import {MainPopup} from "@/features/popup";
 
 export const MainBody = () => {
     const [open, setOpen] = useState(false)
