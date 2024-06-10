@@ -4,6 +4,7 @@ export const MainHeader = () => {
         {name: '준비 된 위스키 수', value: '12'},
         {name: '참여 인원', value: '10 / 15'},
         {name: '시간', value: '15:00 ~ 21:00'},
+        {name: '장소', value: '글리글리'}
     ]
     return (
         <div className="header relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
