@@ -5,3 +5,8 @@
 .header__description {
   text-align: center;
 }
+
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+}
