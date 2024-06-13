@@ -32,8 +32,8 @@ export const MainCards = ({onClick}: Props) => {
                   </div>
                 )}
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">{whisky.name}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900">{whisky.type}</p>
+              <h3 className="mt-4 text-sm text-gray-700">{whisky.type}</h3>
+              <p className="mt-1 text-lg font-medium text-gray-900">{whisky.name}</p>
             </a>
           ))}
         </div>
