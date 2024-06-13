@@ -10,8 +10,10 @@ export default class MyDocument extends Document {
           <meta name="description" content="위스키 파티에 초대합니다."/>
           <link rel="icon" href="/logo.jpg"/>
         </Head>
+        <body>
         <Main/>
         <NextScript/>
+        </body>
       </Html>
     )
   }
