@@ -131,3 +131,5 @@ dist
 
 # ide
 .idea
+
+src/entities/data/index.json

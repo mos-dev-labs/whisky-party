@@ -1,11 +1,14 @@
 import "./style.css"
+import {ChevronRightIcon} from "@heroicons/react/24/solid";
+
+import {config} from '@/entities/data/index.json'
 
 export const MainHeader = () => {
   const stats = [
-    {name: '준비 된 위스키 수', value: '12'},
-    {name: '참여 인원', value: '10 / 15'},
-    {name: '시간', value: '15:00 ~ 21:00'},
-    {name: '장소', value: '글리글리', type: 'LINK', href: "https://naver.me/5xnvqOHO"}
+    {name: '준비 된 위스키 수', value: config.count},
+    {name: '참여 인원', value: `${config.peoples} / 15`},
+    {name: '시간', value: config.times},
+    {name: '장소', value: config.place, type: 'LINK', href: config.placeUrl}
   ]
   return (
     <div className="header relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
@@ -42,18 +45,25 @@ export const MainHeader = () => {
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="header__title text-4xl font-bold tracking-tight text-white sm:text-6xl">Whisky Party</h2>
           <p className="header__description mt-6 text-lg leading-8 text-gray-300">
-            2024년 6월 15일<br/>
-            위스키 시음회에 초청합니다.
+            {config.date} <br/>
+            {config.title}
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2">
+          <dl className="mt-16 grid grid-cols-2 gap-8 sm:mt-20 sm:grid-cols-2">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse">
                 <dt className="text-base leading-7 text-gray-300">{stat.name}</dt>
                 <dd
                   className={`text-2xl font-bold leading-9 tracking-tight text-white ${stat?.type === 'LINK' && 'link'}`}>
-                  {stat.type === 'LINK' ? <a href={stat.href}>{stat.value}</a> : <>{stat.value}</>}
+                  {stat.type === 'LINK' ? (
+                      <a href={stat.href}>
+                        {stat.value}
+                        <ChevronRightIcon className="h-6 w-6 text-white inline" aria-hidden="true"/>
+                      </a>
+                    ) :
+                    <>{stat.value}</>
+                  }
                 </dd>
               </div>
             ))}
